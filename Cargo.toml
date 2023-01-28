@@ -1,0 +1,28 @@
+[package]
+name = "wolfy-pancake"
+version = "1.0.0"
+edition = "2021"
+license = "MIT"
+description = "radom prophecy's generator, written in wasm, and with the help of the LWR discord"
+repository = "https://github.com/othelarian/wolfy-pancake"
+authors = ["othelarian <le.maitre.killian@gmail.com>"]
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+opt-level = 'z'
+lto = true
+
+[dependencies]
+wasm-bindgen = "0.2.83"
+wee_alloc = "0.4.5"
+yew = "0.19.3"
+serde = { version = "1.0.152", features = ["derive"] }
+serde-wasm-bindgen = "0.4.5"
+
+[dependencies.web-sys]
+version = "0.3.57"
+features = ["Element"]

@@ -1,0 +1,167 @@
+$back: #1e2727
+$lightback : #2f3c3b
+$lighterback: #556463
+$darkback: #151b1b
+$basecol: #c5c2a9
+$border: ridge 5px darkgoldenrod
+$border_rad: 15px
+
+$btn_font_size: 15px
+
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap')
+
+// ##########################
+
+%title
+  color: darkgoldenrod
+  -webkit-text-stroke: .2px orange
+  text-shadow: .4px .4px gold
+
+%button
+  &:hover
+    background: $lighterback
+    color: #e7bc00
+
+  &:active
+    background: $back
+    color: darkgoldenrod
+
+
+// ##########################
+
+body
+  font-family: 'MedievalSharp'
+  background: $back
+  color: $basecol
+  font-size: 16px
+
+button
+  font-family: 'MedievalSharp'
+  font-size: $btn_font_size
+  background: $lightback
+  color: $basecol
+
+h1
+  @extend %title
+  font-variant: small-caps
+  font-size: 38px
+  text-decoration: underline
+  margin: 0px auto
+
+h2
+  font-weight: bold
+  font-size: 24px
+  margin: 10px auto
+
+h3
+  @extend %title
+  max-width: 430px
+  text-align: right
+  margin: 10px auto
+  font-style: italic
+  font-size: 21px
+  font-weight: normal
+
+h4
+  @extend %title
+  text-align: center
+  margin: 10px auto
+  font-weight: normal
+  font-size: 18px
+
+hr
+  margin: 14px auto
+  width: 70%
+  border: none
+  border-top: dotted 3px darkgoldenrod
+
+.lp-body
+  max-width: 600px
+  margin: auto
+
+.lp-btn
+  @extend %button
+  height: 40px
+  border: $border
+  border-radius: $border_rad
+
+.lp-controls
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+  gap: 10px
+
+.lp-no-prophetie
+  text-align: center
+
+.lp-prophetie
+  border: $border
+  border-radius: 20px
+  padding: 12px
+  margin: 10px 40px
+  box-sizing: border-box
+  text-align: center
+
+  &.lp-old
+    border-color: goldenrod
+    border-width: 3px
+    background: $lighterback
+    font-size: 14px
+
+.lp-selector
+  $radius: 10px
+
+  display: inline-block
+  border: $border
+  border-radius: $border_rad
+  padding: 0
+  min-width: max-content
+
+  button
+    height: 30px
+    margin: 0
+    border: none
+  
+  button:first-child
+    border-radius: $radius 0 0 $radius
+  
+  button:nth-child(2)
+    border-right: solid 1px black
+    border-left: solid 1px black
+
+  button:nth-child(3)
+    border-radius: 0 $radius $radius 0
+
+  .seld
+    background: $darkback
+    color: #ff8038
+  
+  .notseld
+    @extend %button
+
+.lp-veil
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  background: #000b
+
+  .lp-thanks
+    position: absolute
+    top: 7%
+    left: calc(50% - 120px)
+    right: calc(50% - 120px)
+    width: 240px
+    box-sizing: border-box
+    padding: 10px
+    background: $back
+    color: $basecol
+    border: $border
+    border-radius: $border_rad
+
+.lp-vers-btn
+  border: none
+  background: $back
+  font-family: 'MedievalSharp'
+  color: $basecol
